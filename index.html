@@ -1274,6 +1274,165 @@
 </div>
 
 	</div>
+
+		<style>
+    /* Fullscreen Overlay for Instant Impact */
+    .cross-promo-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 99999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        animation: fadeIn 0.5s forwards 0.5s;
+    }
+
+    .promo-card-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 900px;
+        width: 90%;
+    }
+
+    .promo-card {
+        background: linear-gradient(145deg, #1e1e2f, #2a2a40);
+        border: 2px solid #4f46e5;
+        border-radius: 16px;
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promo-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(79, 70, 229, 0.6);
+        background: linear-gradient(145deg, #2a2a40, #3a3a55);
+    }
+
+    .promo-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+        display: block;
+        animation: rotate 10s infinite linear;
+    }
+
+    .promo-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .promo-desc {
+        font-size: 14px;
+        color: #aaa;
+        line-height: 1.4;
+    }
+
+    /* "Start Game" button to close overlay and let them play */
+    .start-game-btn {
+        position: absolute;
+        bottom: 30px;
+        /* background: #ff4757; */
+        color: white;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        border: 2px solid white;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        z-index: 100000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .start-game-btn:hover {
+        background: white;
+        color: black;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+        .promo-card {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+</style>
+
+<div id="tinyPromoOverlay" class="cross-promo-overlay" style="display:none;"> <!-- Hidden initially -->
+
+    <div class="promo-card-container">
+        <!-- 1. Name Wheel - High Value for Gamers -->
+        <a href="https://tinyfont.me/spin-the-wheel-names/" target="_blank" class="promo-card">
+            <span class="promo-icon">🎰</span>
+            <div class="promo-title">Spin Name Wheel</div>
+            <div class="promo-desc">Generator Random Clan Names <br> & Usernames Instantly!</div>
+        </a>
+
+        <!-- 2. Emoji Wheel - Fun/Random -->
+        <a href="https://tinyfont.me/spin-the-wheel-emoji/" target="_blank" class="promo-card"
+            style="border-color: #ffbe0b;">
+            <span class="promo-icon">🎡</span>
+            <div class="promo-title">Emoji Spin</div>
+            <div class="promo-desc">Test Your Luck! <br> Win Rare Emojis & Prizes</div>
+        </a>
+
+        <!-- 3. Number/Decision Wheel -->
+        <a href="https://tinyfont.me/random-number-wheel/" target="_blank" class="promo-card"
+            style="border-color: #fb5607;">
+            <span class="promo-icon">🎲</span>
+            <div class="promo-title">Lucky Numbers</div>
+            <div class="promo-desc">Need to decide? <br> Let the wheel choose your fate!</div>
+        </a>
+    </div>
+
+    <div class="start-game-btn" onclick="document.getElementById('tinyPromoOverlay').style.display='none'">
+        CONTINUE TO GAME ►
+    </div>
+</div>
+
+<script>
+    // Logic: Show overlay IMMEDIATELY on first load, or maybe every few visits
+    // Currently set to ALWAYS show on page load for maximum visibility as requested.
+    window.addEventListener('load', function () {
+        // You can add logic here to check localStorage if you don't want to annoy returning users
+        // if (!localStorage.getItem('promoSeen')) {
+        document.getElementById('tinyPromoOverlay').style.display = 'flex';
+        // localStorage.setItem('promoSeen', 'true');
+        // }
+    });
+</script>
 	<script type="text/javascript" src="js/jquery-3.6.2.min.js"></script>
 	<script type="text/javascript" src="js/lazysizes.min.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
