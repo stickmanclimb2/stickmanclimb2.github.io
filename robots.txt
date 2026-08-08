@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://igames.netlify.app/sitemap.xml
+Sitemap: https://stickmanclimb2.github.io/sitemap.xml
