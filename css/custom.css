@@ -115,3 +115,86 @@ This file will not be overwritten by the updater
         max-width: 300px;
     }
 }
+
+/* ==========================================================
+   High-Contrast Dark Theme & Game Info Card Styling
+   ========================================================== */
+body {
+    color: #e2e8f0 !important;
+}
+
+.single-title, .page-title, h1 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.game-info {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #cbd5e1 !important;
+}
+
+.game-info h2 {
+    color: #f59e0b !important; /* Warm gold accent for H2 */
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    margin-top: 25px !important;
+    margin-bottom: 12px !important;
+}
+
+.game-info h3 {
+    color: #38bdf8 !important; /* Bright cyan accent for H3 */
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.game-info p, .game-description p, .game-info-more p {
+    color: #e2e8f0 !important;
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 15px;
+}
+
+.game-info ul, .game-description ul, .game-info-more ul {
+    color: #e2e8f0 !important;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.game-info li, .game-description li, .game-info-more li {
+    color: #e2e8f0 !important;
+    line-height: 1.8;
+}
+
+.game-info strong, .game-description strong, .game-info-more strong {
+    color: #f8fafc !important;
+    font-weight: 600;
+}
+
+.section-title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.footer-copyright {
+    color: #94a3b8 !important;
+}
+
+.footer-copyright a {
+    color: #38bdf8 !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-copyright a:hover {
+    color: #7dd3fc !important;
+    text-decoration: underline;
+}

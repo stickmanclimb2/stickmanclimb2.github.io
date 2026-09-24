@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Calligraphy Practice Sheet Generator | Printable PDF & PNG</title>
+    <link rel="canonical" href="https://stickmanclimb2.github.io/calligraphy-sheets-generator/">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Generate custom calligraphy and hand lettering practice sheets for free. Perfect for beginners learning modern calligraphy. Download as PDF or PNG.">
+    <meta name="keywords" content="calligraphy sheets generator, calligraphy practice sheets generator, free printable calligraphy sheets pdf">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%236366f1' font-family='cursive'>C</text></svg>">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="n-r9_41rFhAJ6FuyeZncp0Cq1tz4rDfXxS_DZIUq-0c" />
+    
+    <!-- Pinterest Domain Verification -->
+    <meta name="p:domain_verify" content="cf0a64cdc60701f2711b52b9e490854a"/>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8J5X0YQKJ5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8J5X0YQKJ5');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9534887202409405" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Pacifico&family=Parisienne&family=Sacramento&family=Tangerine:wght@400;700&family=Pinyon+Script&family=Rouge+Script&family=Niconne&family=Petit+Formal+Script&family=Italianno&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- jsPDF library for direct canvas-to-PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- JSZip for zipping multiple PNGs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:image" content="https://tinyfont.me/og_images/index.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="/" style="text-decoration:none; color:inherit;">StickmanClimb2 <span>Calligraphy</span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+            ☰
+        </button>
+        <nav id="mainNav">
+            <a href="/">Home</a>
+            <a href="/random-number-wheel/">Number Wheel</a>
+            <a href="/6x-classroom.html">6x Classroom</a>
+            <a href="/calligraphy-sheets-generator/" class="active">Sheet Generator</a>
+        </nav>
+    </header>
+
+    <!-- Top Header AdSense Banner -->
+    <div style="max-width: 1200px; margin: 20px auto 10px auto; padding: 0 15px; text-align: center; overflow: hidden;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9534887202409405"
+             data-ad-slot="5812459872"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <main class="container">
+        
+        <!-- Controls Sidebar -->
+        <aside class="controls-panel">
+            <h2>Sheet Settings</h2>
+            
+            <div class="control-group">
+                <label for="practiceText">Text to Practice</label>
+                <textarea id="practiceText" rows="4">Calligraphy Practice
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789</textarea>
+            </div>
+
+            <div class="control-group">
+                <label for="fontFamily">Calligraphy Font</label>
+                <select id="fontFamily" style="display: none;">
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Alex Brush', cursive">Alex Brush</option>
+                    <option value="'Allura', cursive">Allura</option>
+                    <option value="'Caveat', cursive">Caveat</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Parisienne', cursive">Parisienne</option>
+                    <option value="'Sacramento', cursive">Sacramento</option>
+                    <option value="'Tangerine', cursive">Tangerine</option>
+                    <option value="'Pinyon Script', cursive">Pinyon Script</option>
+                    <option value="'Rouge Script', cursive">Rouge Script</option>
+                    <option value="'Niconne', cursive">Niconne</option>
+                    <option value="'Petit Formal Script', cursive">Petit Formal Script</option>
+                    <option value="'Italianno', cursive">Italianno</option>
+                </select>
+                
+                <div class="custom-dropdown" id="fontDropdown">
+                    <div class="dropdown-selected" id="fontDropdownSelected">
+                        <span style="font-family: 'Dancing Script', cursive; font-size: 1.4rem;">Dancing Script</span>
+                    </div>
+                    <ul class="dropdown-options" id="fontDropdownOptions">
+                        <li data-value="'Dancing Script', cursive" style="font-family: 'Dancing Script', cursive;">Dancing Script</li>
+                        <li data-value="'Great Vibes', cursive" style="font-family: 'Great Vibes', cursive;">Great Vibes</li>
+                        <li data-value="'Alex Brush', cursive" style="font-family: 'Alex Brush', cursive;">Alex Brush</li>
+                        <li data-value="'Allura', cursive" style="font-family: 'Allura', cursive;">Allura</li>
+                        <li data-value="'Caveat', cursive" style="font-family: 'Caveat', cursive;">Caveat</li>
+                        <li data-value="'Pacifico', cursive" style="font-family: 'Pacifico', cursive;">Pacifico</li>
+                        <li data-value="'Parisienne', cursive" style="font-family: 'Parisienne', cursive;">Parisienne</li>
+                        <li data-value="'Sacramento', cursive" style="font-family: 'Sacramento', cursive;">Sacramento</li>
+                        <li data-value="'Tangerine', cursive" style="font-family: 'Tangerine', cursive;">Tangerine</li>
+                        <li data-value="'Pinyon Script', cursive" style="font-family: 'Pinyon Script', cursive;">Pinyon Script</li>
+                        <li data-value="'Rouge Script', cursive" style="font-family: 'Rouge Script', cursive;">Rouge Script</li>
+                        <li data-value="'Niconne', cursive" style="font-family: 'Niconne', cursive;">Niconne</li>
+                        <li data-value="'Petit Formal Script', cursive" style="font-family: 'Petit Formal Script', cursive;">Petit Formal Script (Copperplate)</li>
+                        <li data-value="'Italianno', cursive" style="font-family: 'Italianno', cursive;">Italianno (Copperplate)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="fontSize">Font Size</label>
+                <input type="range" id="fontSize" min="30" max="120" value="60">
+                <span id="fontSizeVal">60px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="lineSpacing">Line Spacing</label>
+                <input type="range" id="lineSpacing" min="1" max="3" step="0.1" value="2">
+                <span id="lineSpacingVal">2.0x</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Text Color</label>
+                <input type="color" id="textColor" value="#000000" style="height: 40px; padding: 0.2rem; cursor: pointer;">
+            </div>
+
+            <div class="control-group">
+                <label for="textAlign">Text Alignment</label>
+                <select id="textAlign" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1rem; font-family: inherit; background: #fff;">
+                    <option value="left">Left</option>
+                    <option value="center" selected>Center</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="textOpacity">Text Opacity (For Tracing)</label>
+                <input type="range" id="textOpacity" min="0.1" max="1" step="0.05" value="0.25">
+                <span id="textOpacityVal">25%</span>
+            </div>
+
+            <div class="control-group">
+                <label>Guidelines</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showGuidelines" checked>
+                    <label for="showGuidelines">Show Guidelines (Slant/Grid)</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Watermark</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showWatermark" checked>
+                    <label for="showWatermark">Include Watermark</label>
+                </div>
+            </div>
+
+            <div class="export-actions">
+                <button id="downloadPdfBtn" class="primary-btn">
+                    ↓ Download PDF
+                </button>
+                <div class="secondary-actions">
+                    <button id="downloadPngBtn" class="secondary-btn">Download PNG</button>
+                    <button id="printBtn" class="secondary-btn">Print</button>
+                </div>
+            </div>
+
+            <!-- Sidebar AdSense Unit -->
+            <div style="margin-top: 25px; text-align: center; overflow: hidden; border-radius: 8px; background: #f8fafc; padding: 10px; border: 1px solid #e2e8f0;">
+                <span style="font-size: 11px; text-transform: uppercase; color: #94a3b8; display: block; margin-bottom: 5px;">Advertisement</span>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9534887202409405"
+                     data-ad-slot="5812459872"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </aside>
+
+        <!-- Preview Area -->
+        <section class="preview-area">
+            <div class="preview-header">
+                <h3>Live Preview</h3>
+                <p class="hint">Updates instantly as you type.</p>
+            </div>
+
+            <div class="canvas-wrapper">
+                <div id="pdf-content">
+                    <!-- Canvases will be dynamically injected here by script.js -->
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+<!-- TF -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9534887202409405"
+     data-ad-slot="8993151122"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <!-- SEO Content Section -->
+    <section class="seo-content">
+        <div class="seo-article">
+            <h1>Free Calligraphy Practice Sheet Generator</h1>
+            <p>Welcome to the ultimate tool for creating custom <strong>calligraphy practice sheets</strong>. Whether you are a beginner looking to master modern hand lettering or a seasoned professional practicing traditional scripts, our free generator lets you create perfectly sized, printable PDF worksheets in seconds.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="free-calligraphy-samples.zip" download class="primary-btn" style="display: inline-block; text-decoration: none;">📦 Download Free Sample Worksheets (ZIP)</a>
+            </div>
+
+            <h2>What is this tool about?</h2>
+            <p>This <em>calligraphy sheet generator</em> is a 100% free, client-side tool that allows you to type any text, select from beautiful Google Fonts (like Dancing Script or Great Vibes), and instantly generate tracing worksheets. You can customize the font size, line spacing, and ink opacity to match your exact practice needs. Our <strong>calligraphy worksheet generator</strong> produces high-quality, scalable vector graphics.</p>
+
+            <h2>How to Make Calligraphy Practice Sheets</h2>
+            <ol>
+                <li><strong>Enter Your Text:</strong> Type the letters, words, or sentences you want to practice in the text box. Want to know <strong>how to write p in calligraphy</strong>, <strong>how to write calligraphy numbers</strong>, or perfect your <strong>z calligraphy signature</strong>? Just type them in!</li>
+                <li><strong>Choose a Font:</strong> Select a premium calligraphy font from our curated list. We offer styles ranging from modern script to traditional <strong>z calligraphy fonts</strong>.</li>
+                <li><strong>Adjust Settings:</strong> Use the sliders to change the font size and line spacing to match your pen or brush size. Do you need a calligraphy pen to do calligraphy? No! You can use our sheets with normal pens too.</li>
+                <li><strong>Set Opacity:</strong> Lower the text opacity so you can trace over the letters easily. This effectively turns the page into <strong>handwriting sheets</strong> or a <strong>calligraphy guide sheet generator</strong>.</li>
+                <li><strong>Print or Download:</strong> Click "Download PDF" to save a multi-page workbook, or "Print" to print directly to your printer. You can also download <strong>free calligraphy practice sheets pdf</strong> versions using our tool.</li>
+            </ol>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Are these calligraphy sheets printable and free?</h3>
+                <p>Yes! All generated worksheets are completely free and optimized for standard A4 paper printing. Whether you need <strong>printable calligraphy practice sheets pdf</strong>, <strong>calligraphy sheets printable free</strong>, or a <strong>chinese calligraphy sheet generator</strong> alternative, we have you covered.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I create blank calligraphy practice sheets pdf?</h3>
+                <p>Absolutely. Simply delete all the text in the "Text to Practice" box, ensure "Show Guidelines" is checked, and hit Download PDF. You will get perfectly lined <strong>blank calligraphy sheets</strong> to practice on.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How to print calligraphy practice sheets?</h3>
+                <p>Once you generate your sheets, click the 'Print' button to send them directly to your printer, or download the <strong>free printable calligraphy sheets pdf</strong> to print them later at any <strong>calligraphy pen rate</strong> or scale.</p>
+            </div>
+        </div>
+    </section>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9534887202409405"
+     crossorigin="anonymous"></script>
+<!-- TF -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9534887202409405"
+     data-ad-slot="8993151122"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <footer id="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Free Practice Sheets</h4>
+                <p>Create custom, high-resolution calligraphy practice sheets and handwriting worksheets instantly. 100% free printable PDF export.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Tools</h4>
+                <a href="/calligraphy-sheets-generator/">Calligraphy Sheet Generator</a>
+                <a href="/random-number-wheel/">Random Number Wheel</a>
+                <a href="/6x-classroom.html">6x Classroom Unblocked</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal & Info</h4>
+                <a href="/policy.html">Privacy Policy</a>
+                <a href="/term.html">Terms of Service</a>
+                <a href="/dmca.html">DMCA</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="current-year"></span> stickmanclimb2.github.io - All rights reserved.
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" aria-label="Back to Top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

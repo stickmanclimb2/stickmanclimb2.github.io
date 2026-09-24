@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../images/favicon.png" rel="icon" sizes="32x32"/>
+    <title>Random Number Wheel - Free Online Picker & Decision Spinner</title>
+    <meta name="description" content="Spin the free random number wheel online! Pick random numbers from 1 to 10, 100, or any custom range. Fast, 100% fair, and customizable decision spinner with sound and celebration effects."/>
+    <meta name="keywords" content="random number wheel, spin the wheel numbers, random picker wheel, number spinner, random number generator wheel, decision wheel, giveaway picker, classroom number picker, lucky wheel"/>
+    <link rel="canonical" href="https://stickmanclimb2.github.io/random-number-wheel/"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="author" content="Stickman Climb 2"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://stickmanclimb2.github.io/random-number-wheel/"/>
+    <meta property="og:site_name" content="Stickman Climb 2 Games"/>
+    <meta property="og:title" content="Random Number Wheel - Free Online Picker & Decision Spinner"/>
+    <meta property="og:description" content="Spin the random number wheel to pick winners, make decisions, or generate random numbers (1-10, 1-100, or custom range). Free with sound & confetti!"/>
+    <meta property="og:image" content="https://stickmanclimb2.github.io/images/random-number-wheel-og.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="https://stickmanclimb2.github.io/random-number-wheel/"/>
+    <meta name="twitter:title" content="Random Number Wheel - Free Online Picker & Decision Spinner"/>
+    <meta name="twitter:description" content="Spin the random number wheel online for giveaways, classroom picks, or quick decisions. 100% free, fair, and customizable."/>
+    <meta name="twitter:image" content="https://stickmanclimb2.github.io/images/random-number-wheel-og.png"/>
+
+    <!-- Stylesheets -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/user.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5QVDPDFK3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K5QVDPDFK3');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9534887202409405" crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Random Number Wheel",
+      "url": "https://stickmanclimb2.github.io/random-number-wheel/",
+      "description": "An interactive, customizable random number wheel spinner for games, classroom draws, giveaways, and decision making.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://stickmanclimb2.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Random Number Wheel",
+          "item": "https://stickmanclimb2.github.io/random-number-wheel/"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the Random Number Wheel work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The wheel uses a cryptographically randomized physics simulation. Enter your desired range (e.g., 1 to 10 or 1 to 100) or custom items, then click 'SPIN'. The wheel accelerates and decelerates naturally, stopping on a randomly chosen segment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the number wheel completely fair and unbiased?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, each segment has an equal angular slice and equal probability. The stopping angle is chosen using pseudorandom generation with floating-point variance, ensuring 100% fair and unpredictable outcomes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use custom names or text instead of numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Switch to the 'Custom List' tab to type or paste any list of numbers, student names, team names, or choices separated by commas or lines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I remove a number after it has been chosen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When a winning number is selected, you can click the 'Remove Winner' button to eliminate it from subsequent spins, which is ideal for raffles and elimination games."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #f1f5f9;
+            background: #0f172a;
+        }
+        .tool-hero-card {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .wheel-container {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #wheelCanvas {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+            transition: transform 0.1s ease-out;
+        }
+        .wheel-pointer {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 38px;
+            height: 48px;
+            z-index: 10;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+        }
+        .spin-btn-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #fff;
+            font-weight: 800;
+            font-size: 16px;
+            border: 4px solid #ffffff;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            user-select: none;
+            z-index: 5;
+        }
+        .spin-btn-center:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.8);
+        }
+        .spin-btn-center:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+        .btn-glow {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 28px;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.2s ease;
+        }
+        .btn-glow:hover {
+            background: linear-gradient(135deg, #4f46e5, #4338ca);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+        .preset-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            border: 1px solid #334155;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 3px;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .preset-pill:hover, .preset-pill.active {
+            background: #3b82f6;
+            color: #fff;
+            border-color: #3b82f6;
+        }
+        .form-control-dark {
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #f8fafc;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .form-control-dark:focus {
+            background: #0f172a;
+            border-color: #6366f1;
+            color: #fff;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+        }
+        .winner-modal-box {
+            display: none;
+            background: rgba(15, 23, 42, 0.95);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(245, 158, 11, 0.3);
+            animation: popIn 0.3s ease-out;
+            margin-top: 20px;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .winner-number-display {
+            font-size: 64px;
+            font-weight: 800;
+            color: #f59e0b;
+            text-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+            line-height: 1.1;
+            margin: 10px 0;
+        }
+        .nav-tabs .nav-link {
+            color: #94a3b8;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-weight: 600;
+        }
+        .nav-tabs .nav-link.active {
+            color: #38bdf8;
+            background: transparent;
+            border-bottom: 2px solid #38bdf8;
+        }
+        .content-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #334155;
+            padding: 16px 0;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #38bdf8;
+            cursor: pointer;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .history-badge {
+            background: #334155;
+            color: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin: 3px;
+            display: inline-block;
+        }
+        .banner-ad-wrapper {
+            margin: 25px 0;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 10px;
+        }
+        #confettiCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body id="page-top" style="background: url('../images/background1.png'); background-size: cover; background-attachment: fixed;">
+
+<canvas id="confettiCanvas"></canvas>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark top-nav" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">
+            <img alt="Stickman Climb 2 Logo" class="topVAZ-logo" height="35" src="../images/logo.png" width="70" onerror="this.style.display='none'"/>
+            <strong style="margin-left: 8px;">stickmanclimb2.github.io</strong>
+        </a>
+        <button aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#nav-menu" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/random-number-wheel/" style="color:#f59e0b;font-weight:600;"><i class="bi bi-disc-fill me-1"></i> Number Wheel</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/running.html">Running</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/puzzle.html">Puzzle</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/racing.html">Racing</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/skill.html">Skill</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/sports.html">Sports</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">More</a>
+                    <ul class="dropdown-menu dropdown-menu-dark" role="menu">
+                        <li><a class="dropdown-item" href="/category/shooting.html">Shooting</a></li>
+                        <li><a class="dropdown-item" href="/category/moto.html">Moto</a></li>
+                        <li><a class="dropdown-item" href="/category/stickman.html">Stickman</a></li>
+                        <li><a class="dropdown-item" href="/category/adventure.html">Adventure</a></li>
+                        <li><a class="dropdown-item" href="/category/multiplayer.html">Multiplayer</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-4">
+
+    <!-- Top AdSense Banner -->
+    <div class="banner-ad-wrapper">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9534887202409405"
+             data-ad-slot="5812459872"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Tool Section -->
+    <div class="tool-hero-card">
+        <div class="text-center mb-4">
+            <h1 class="fw-bold" style="font-size: 2.2rem; color: #f8fafc;">🎲 Random Number Wheel</h1>
+            <p class="text-muted" style="color: #94a3b8 !important;">Spin the wheel to pick random numbers, choose lucky winners, or make fair decisions instantly!</p>
+        </div>
+
+        <div class="row align-items-center">
+            <!-- Left Column: Wheel Display -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="wheel-container">
+                    <!-- Wheel Pointer -->
+                    <svg class="wheel-pointer" viewBox="0 0 38 48">
+                        <polygon points="19,48 2,12 36,12" fill="#ef4444" stroke="#ffffff" stroke-width="3"/>
+                        <circle cx="19" cy="12" r="10" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+                    </svg>
+
+                    <!-- Canvas -->
+                    <canvas id="wheelCanvas" width="800" height="800"></canvas>
+
+                    <!-- Center Spin Button -->
+                    <div class="spin-btn-center" id="spinCenterBtn" title="Click to Spin!">
+                        SPIN
+                    </div>
+                </div>
+
+                <!-- Controls below wheel -->
+                <div class="text-center mt-3">
+                    <button class="btn btn-glow btn-lg px-4 me-2" id="spinBigBtn"><i class="bi bi-play-circle-fill me-2"></i>SPIN THE WHEEL</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="soundToggleBtn"><i class="bi bi-volume-up-fill" id="soundIcon"></i> Sound: ON</button>
+                </div>
+
+                <!-- Winner Display Box -->
+                <div class="winner-modal-box" id="winnerBox">
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: #cbd5e1;">🎉 Winning Result 🎉</div>
+                    <div class="winner-number-display" id="winnerVal">7</div>
+                    <div>
+                        <button class="btn btn-warning btn-sm me-2 fw-bold" id="spinAgainBtn"><i class="bi bi-arrow-repeat me-1"></i> Spin Again</button>
+                        <button class="btn btn-outline-danger btn-sm" id="removeWinnerBtn"><i class="bi bi-trash-fill me-1"></i> Remove Winner</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Settings & Configuration -->
+            <div class="col-lg-6">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3" id="wheelModeTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="range-tab" data-bs-toggle="tab" data-bs-target="#range-pane" type="button" role="tab">🔢 Number Range</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom-pane" type="button" role="tab">📝 Custom List / Names</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="wheelTabContent">
+                    <!-- Range Pane -->
+                    <div class="tab-pane fade show active" id="range-pane" role="tabpanel">
+                        <div class="mb-3">
+                            <label class="form-label text-light fw-semibold">Quick Presets:</label>
+                            <div>
+                                <span class="preset-pill active" data-min="1" data-max="10">1 – 10</span>
+                                <span class="preset-pill" data-min="1" data-max="20">1 – 20</span>
+                                <span class="preset-pill" data-min="1" data-max="50">1 – 50</span>
+                                <span class="preset-pill" data-min="1" data-max="100">1 – 100</span>
+                                <span class="preset-pill" data-min="1" data-max="6">Dice (1 – 6)</span>
+                                <span class="preset-pill" data-min="0" data-max="9">0 – 9</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label text-light">Minimum Number</label>
+                                <input type="number" class="form-control form-control-dark" id="rangeMin" value="1" min="-9999" max="9999">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label text-light">Maximum Number</label>
+                                <input type="number" class="form-control form-control-dark" id="rangeMax" value="10" min="-9999" max="9999">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline-info w-100" id="applyRangeBtn"><i class="bi bi-arrow-clockwise me-1"></i> Update Wheel Range</button>
+                    </div>
+
+                    <!-- Custom List Pane -->
+                    <div class="tab-pane fade" id="custom-pane" role="tabpanel">
+                        <div class="mb-2">
+                            <label class="form-label text-light">Enter Numbers or Items (one per line or separated by commas):</label>
+                            <textarea class="form-control form-control-dark" id="customListInput" rows="5" placeholder="1&#10;2&#10;3&#10;4&#10;5">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <span class="preset-pill" id="presetYesNo">Yes / No</span>
+                            <span class="preset-pill" id="presetLetters">A, B, C, D, E</span>
+                            <span class="preset-pill" id="presetColors">Colors (Red, Blue, Green...)</span>
+                        </div>
+                        <button class="btn btn-outline-info w-100" id="applyCustomBtn"><i class="bi bi-check2-circle me-1"></i> Apply Custom List</button>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="mt-4 p-3 rounded" style="background: rgba(15, 23, 42, 0.6); border: 1px solid #334155;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-light fw-semibold"><i class="bi bi-clock-history me-1"></i> Spin History</span>
+                        <button class="btn btn-link btn-sm text-muted p-0 text-decoration-none" id="clearHistoryBtn">Clear</button>
+                    </div>
+                    <div id="historyList" class="d-flex flex-wrap" style="max-height: 80px; overflow-y: auto;">
+                        <span class="text-muted small">No spins yet. Click SPIN to start!</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Mid Content AdSense Banner -->
+    <div class="banner-ad-wrapper">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9534887202409405"
+             data-ad-slot="5812459872"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- SEO Content Section -->
+    <div class="row">
+        <div class="col-lg-8">
+            <article class="content-card">
+                <h2 class="h3 fw-bold text-light mb-3">What is the Random Number Wheel?</h2>
+                <p>
+                    The <strong>Random Number Wheel</strong> is a free, interactive online randomizer designed to make number selection, decision-making, and raffle drawings easy, engaging, and 100% fair. Rather than relying on simple static random number generators, our spinning wheel adds anticipation and visual excitement with realistic physics, smooth deceleration, audio feedback, and celebration animations.
+                </p>
+                <p>
+                    Whether you need to pick a lucky number between <strong>1 and 10</strong>, choose a lottery number up to <strong>1 and 100</strong>, assign tasks in a classroom, or select a contest winner, this tool gives you instant results with zero bias.
+                </p>
+
+                <h2 class="h3 fw-bold text-light mt-4 mb-3">How to Use the Number Wheel</h2>
+                <ol class="text-muted" style="color: #cbd5e1 !important; line-height: 1.8;">
+                    <li><strong>Choose a Preset or Custom Range:</strong> Select one of the quick preset buttons (1-10, 1-20, 1-50, 1-100, or Dice 1-6) or enter custom minimum and maximum values in the settings panel.</li>
+                    <li><strong>Or Enter Custom Choices:</strong> Switch to the <em>Custom List</em> tab to input names, letters, or custom numbers.</li>
+                    <li><strong>Spin the Wheel:</strong> Click the center <strong>SPIN</strong> button or the main action button to launch the wheel.</li>
+                    <li><strong>View Your Result:</strong> The wheel smoothly slows down and points directly to the winning segment with sound effects and confetti celebration.</li>
+                    <li><strong>Remove Winner (Optional):</strong> If you are running an elimination raffle or game where numbers cannot repeat, click <em>Remove Winner</em> to instantly eliminate that option for the next spin.</li>
+                </ol>
+
+                <h2 class="h3 fw-bold text-light mt-4 mb-3">Popular Ways to Use the Number Wheel</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 rounded h-100" style="background:#1e293b; border: 1px solid #334155;">
+                            <h4 class="h5 text-warning"><i class="bi bi-gift-fill me-2"></i>Giveaways & Raffles</h4>
+                            <p class="small text-muted mb-0">Assign numbered tickets to participants and spin the wheel live on stream or in person to select lucky raffle winners transparently.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded h-100" style="background:#1e293b; border: 1px solid #334155;">
+                            <h4 class="h5 text-info"><i class="bi bi-mortarboard-fill me-2"></i>Classroom Activities</h4>
+                            <p class="small text-muted mb-0">Teachers can randomly select student numbers, assign presentation orders, or pick teams without any complaints of favoritism.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded h-100" style="background:#1e293b; border: 1px solid #334155;">
+                            <h4 class="h5 text-success"><i class="bi bi-controller me-2"></i>Board Games & RPGs</h4>
+                            <p class="small text-muted mb-0">Replace lost dice or spin for random turn orders, stat rolls, random encounters, and custom game mechanics.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 rounded h-100" style="background:#1e293b; border: 1px solid #334155;">
+                            <h4 class="h5 text-danger"><i class="bi bi-check2-circle me-2"></i>Decision Making</h4>
+                            <p class="small text-muted mb-0">Stuck between multiple options? Number your choices and let the wheel make an unbiased decision for you in seconds.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="h3 fw-bold text-light mt-5 mb-3">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Is this random number wheel truly fair?</span> <i class="bi bi-chevron-down"></i></div>
+                    <div class="text-muted small">Yes. The wheel calculates rotation and deceleration using mathematical randomization algorithms. Every segment on the wheel has exactly equal dimensions and an identical probability of winning.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Can I spin numbers up to 100?</span> <i class="bi bi-chevron-down"></i></div>
+                    <div class="text-muted small">Yes! You can choose the 1–100 preset or specify any custom minimum and maximum numbers. For large numbers of slices, the wheel dynamically formats segment labels for crystal-clear readability.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Is there any limit on how many times I can spin?</span> <i class="bi bi-chevron-down"></i></div>
+                    <div class="text-muted small">None at all. The Random Number Wheel is 100% free and unlimited. You can spin as many times as you like directly in your web browser with zero downloads required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Does it work on mobile phones and tablets?</span> <i class="bi bi-chevron-down"></i></div>
+                    <div class="text-muted small">Yes, the wheel is fully responsive and touchscreen-optimized for iPhone, iPad, Android smartphones, laptops, and smartboards.</div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Right Sidebar: Related Games & Shortcuts -->
+        <div class="col-lg-4">
+            <div class="content-card">
+                <h3 class="h5 fw-bold text-light mb-3">🎮 Popular Unblocked Games</h3>
+                <div class="d-flex flex-column gap-2">
+                    <a href="/play/stickman-climb-2.html" class="d-flex align-items-center p-2 rounded text-decoration-none" style="background:#1e293b; color:#f8fafc;">
+                        <img src="../stickman-climb-2.png" width="40" height="40" class="rounded me-2" alt="Stickman Climb 2">
+                        <div>
+                            <div class="fw-semibold">Stickman Climb 2</div>
+                            <div class="small text-muted">Play Free Online</div>
+                        </div>
+                    </a>
+                    <a href="/play/retro-bowl.html" class="d-flex align-items-center p-2 rounded text-decoration-none" style="background:#1e293b; color:#f8fafc;">
+                        <img src="../retrobowl+++-play-online-for-free.webp" width="40" height="40" class="rounded me-2" alt="Retro Bowl" onerror="this.src='../images/logo.png'">
+                        <div>
+                            <div class="fw-semibold">Retro Bowl</div>
+                            <div class="small text-muted">Classic Football Game</div>
+                        </div>
+                    </a>
+                    <a href="/play/red-ball-4.html" class="d-flex align-items-center p-2 rounded text-decoration-none" style="background:#1e293b; color:#f8fafc;">
+                        <img src="../red-ball-4.png" width="40" height="40" class="rounded me-2" alt="Red Ball 4">
+                        <div>
+                            <div class="fw-semibold">Red Ball 4</div>
+                            <div class="small text-muted">Physics Adventure</div>
+                        </div>
+                    </a>
+                    <a href="/category/puzzle.html" class="btn btn-outline-primary mt-2">Browse All Puzzle Games</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Ad Slot -->
+            <div class="banner-ad-wrapper">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9534887202409405"
+                     data-ad-slot="5812459872"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer-copyright py-4 mt-5" style="background: #090d16; border-top: 1px solid #1e293b;">
+    <div class="container text-center">
+        <p class="mb-1 text-muted">stickmanclimb2.github.io &copy; 2026. All rights reserved.</p>
+        <span class="dsb-panel">
+            <a href="/" class="text-muted text-decoration-none me-3">Home</a>
+            <a href="/random-number-wheel/" class="text-warning text-decoration-none me-3">Random Number Wheel</a>
+            <a href="/term.html" class="text-muted text-decoration-none me-3">Terms</a>
+            <a href="/dmca.html" class="text-muted text-decoration-none me-3">DMCA</a>
+            <a href="/policy.html" class="text-muted text-decoration-none">Privacy Policy</a>
+        </span>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="../js/jquery-3.6.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script>
+    // --- State & Config ---
+    let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let startAngle = 0;
+    let arc = Math.PI / (items.length / 2);
+    let spinTimeout = null;
+    let spinTime = 0;
+    let spinTimeTotal = 0;
+    let isSpinning = false;
+    let soundEnabled = true;
+    let spinHistory = [];
+
+    // Distinct Palette for Segments
+    const palette = [
+        '#ef4444', '#f97316', '#f59e0b', '#10b981', 
+        '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', 
+        '#ec4899', '#14b8a6', '#84cc16', '#eab308'
+    ];
+
+    const canvas = document.getElementById("wheelCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // --- Web Audio API Synth for Ticking Sound (0 External Files Needed!) ---
+    let audioCtx = null;
+    function playTick() {
+        if (!soundEnabled) return;
+        try {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.04);
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.04);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.04);
+        } catch(e) {}
+    }
+
+    function playWinSound() {
+        if (!soundEnabled) return;
+        try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const notes = [440, 554, 659, 880];
+            notes.forEach((freq, idx) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = "triangle";
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime + idx * 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + idx * 0.1 + 0.3);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + idx * 0.1);
+                osc.stop(audioCtx.currentTime + idx * 0.1 + 0.3);
+            });
+        } catch(e) {}
+    }
+
+    // --- Draw Wheel ---
+    function drawWheel() {
+        if (!canvas) return;
+        const outsideRadius = 360;
+        const textRadius = 260;
+        const insideRadius = 55;
+
+        ctx.clearRect(0, 0, 800, 800);
+        ctx.strokeStyle = "#1e293b";
+        ctx.lineWidth = 4;
+
+        arc = (2 * Math.PI) / items.length;
+
+        for (let i = 0; i < items.length; i++) {
+            const angle = startAngle + i * arc;
+            ctx.fillStyle = palette[i % palette.length];
+
+            ctx.beginPath();
+            ctx.arc(400, 400, outsideRadius, angle, angle + arc, false);
+            ctx.arc(400, 400, insideRadius, angle + arc, angle, true);
+            ctx.stroke();
+            ctx.fill();
+
+            ctx.save();
+            ctx.fillStyle = "#ffffff";
+            ctx.shadowColor = "rgba(0,0,0,0.5)";
+            ctx.shadowBlur = 4;
+            ctx.font = items.length > 30 ? "bold 18px Poppins" : (items.length > 15 ? "bold 26px Poppins" : "bold 34px Poppins");
+            ctx.translate(
+                400 + Math.cos(angle + arc / 2) * textRadius,
+                400 + Math.sin(angle + arc / 2) * textRadius
+            );
+            ctx.rotate(angle + arc / 2 + Math.PI / 2);
+            const text = String(items[i]);
+            ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+            ctx.restore();
+        }
+
+        // Outer Ring
+        ctx.beginPath();
+        ctx.arc(400, 400, outsideRadius, 0, 2 * Math.PI);
+        ctx.strokeStyle = "#f8fafc";
+        ctx.lineWidth = 8;
+        ctx.stroke();
+    }
+
+    // --- Spin Logic ---
+    let lastSegment = -1;
+    function rotateWheel() {
+        spinTime += 30;
+        if (spinTime >= spinTimeTotal) {
+            stopRotateWheel();
+            return;
+        }
+        const spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+        startAngle += (spinAngle * Math.PI / 180);
+        drawWheel();
+
+        // Check segment change for click sound
+        const degrees = startAngle * 180 / Math.PI + 90;
+        const arcd = arc * 180 / Math.PI;
+        const currentSegment = Math.floor((360 - degrees % 360) % 360 / arcd);
+        if (currentSegment !== lastSegment) {
+            playTick();
+            lastSegment = currentSegment;
+        }
+
+        spinTimeout = requestAnimationFrame(rotateWheel);
+    }
+
+    function stopRotateWheel() {
+        isSpinning = false;
+        const degrees = startAngle * 180 / Math.PI + 90;
+        const arcd = arc * 180 / Math.PI;
+        const index = Math.floor((360 - degrees % 360) % 360 / arcd);
+        const winningItem = items[index];
+
+        showWinner(winningItem);
+        playWinSound();
+        triggerConfetti();
+        addToHistory(winningItem);
+    }
+
+    function easeOut(t, b, c, d) {
+        const ts = (t /= d) * t;
+        const tc = ts * t;
+        return b + c * (tc + -3 * ts + 3 * t);
+    }
+
+    function spin() {
+        if (isSpinning || items.length === 0) return;
+        isSpinning = true;
+        document.getElementById("winnerBox").style.display = "none";
+        spinAngleStart = Math.random() * 15 + 25;
+        spinTime = 0;
+        spinTimeTotal = Math.random() * 2000 + 4000;
+        rotateWheel();
+    }
+
+    // --- Winner & History ---
+    function showWinner(val) {
+        document.getElementById("winnerVal").textContent = val;
+        document.getElementById("winnerBox").style.display = "block";
+    }
+
+    function addToHistory(val) {
+        spinHistory.unshift(val);
+        if (spinHistory.length > 20) spinHistory.pop();
+        renderHistory();
+    }
+
+    function renderHistory() {
+        const list = document.getElementById("historyList");
+        if (spinHistory.length === 0) {
+            list.innerHTML = '<span class="text-muted small">No spins yet. Click SPIN to start!</span>';
+            return;
+        }
+        list.innerHTML = spinHistory.map(item => `<span class="history-badge">${item}</span>`).join('');
+    }
+
+    // --- Lightweight Canvas Confetti ---
+    const confettiCanvas = document.getElementById("confettiCanvas");
+    const confettiCtx = confettiCanvas.getContext("2d");
+    let confettiParticles = [];
+
+    function resizeConfetti() {
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfetti);
+    resizeConfetti();
+
+    function triggerConfetti() {
+        confettiParticles = [];
+        for (let i = 0; i < 90; i++) {
+            confettiParticles.push({
+                x: window.innerWidth / 2,
+                y: window.innerHeight / 2,
+                r: Math.random() * 6 + 4,
+                d: Math.random() * 90,
+                color: palette[Math.floor(Math.random() * palette.length)],
+                tilt: Math.floor(Math.random() * 10) - 10,
+                tiltAngleIncremental: (Math.random() * 0.07) + .05,
+                tiltAngle: 0,
+                vx: (Math.random() - 0.5) * 18,
+                vy: (Math.random() - 0.7) * 18
+            });
+        }
+        requestAnimationFrame(updateConfetti);
+    }
+
+    function updateConfetti() {
+        confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+        let alive = false;
+        confettiParticles.forEach(p => {
+            p.tiltAngle += p.tiltAngleIncremental;
+            p.y += p.vy;
+            p.x += p.vx;
+            p.vy += 0.4; // gravity
+            p.tilt = Math.sin(p.tiltAngle) * 15;
+
+            if (p.y < confettiCanvas.height) alive = true;
+
+            confettiCtx.beginPath();
+            confettiCtx.lineWidth = p.r;
+            confettiCtx.strokeStyle = p.color;
+            confettiCtx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+            confettiCtx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+            confettiCtx.stroke();
+        });
+        if (alive) requestAnimationFrame(updateConfetti);
+        else confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    }
+
+    // --- Event Listeners ---
+    document.getElementById("spinCenterBtn").addEventListener("click", spin);
+    document.getElementById("spinBigBtn").addEventListener("click", spin);
+    document.getElementById("spinAgainBtn").addEventListener("click", spin);
+
+    document.getElementById("removeWinnerBtn").addEventListener("click", function() {
+        const val = document.getElementById("winnerVal").textContent;
+        const idx = items.findIndex(i => String(i) === String(val));
+        if (idx !== -1 && items.length > 2) {
+            items.splice(idx, 1);
+            drawWheel();
+            document.getElementById("winnerBox").style.display = "none";
+        } else if (items.length <= 2) {
+            alert("A minimum of 2 options are required for the wheel!");
+        }
+    });
+
+    document.getElementById("clearHistoryBtn").addEventListener("click", function() {
+        spinHistory = [];
+        renderHistory();
+    });
+
+    // Sound Toggle
+    document.getElementById("soundToggleBtn").addEventListener("click", function() {
+        soundEnabled = !soundEnabled;
+        const icon = document.getElementById("soundIcon");
+        if (soundEnabled) {
+            this.innerHTML = '<i class="bi bi-volume-up-fill" id="soundIcon"></i> Sound: ON';
+            this.className = "btn btn-outline-secondary btn-sm";
+        } else {
+            this.innerHTML = '<i class="bi bi-volume-mute-fill" id="soundIcon"></i> Sound: OFF';
+            this.className = "btn btn-outline-danger btn-sm";
+        }
+    });
+
+    // Presets
+    document.querySelectorAll(".preset-pill[data-min]").forEach(pill => {
+        pill.addEventListener("click", function() {
+            document.querySelectorAll(".preset-pill[data-min]").forEach(p => p.classList.remove("active"));
+            this.classList.add("active");
+            const min = parseInt(this.getAttribute("data-min"));
+            const max = parseInt(this.getAttribute("data-max"));
+            document.getElementById("rangeMin").value = min;
+            document.getElementById("rangeMax").value = max;
+            generateRange(min, max);
+        });
+    });
+
+    function generateRange(min, max) {
+        if (min >= max) {
+            alert("Minimum must be strictly less than maximum.");
+            return;
+        }
+        if (max - min > 300) {
+            alert("Maximum range limit is 300 items for wheel clarity.");
+            return;
+        }
+        items = [];
+        for (let i = min; i <= max; i++) items.push(i);
+        drawWheel();
+    }
+
+    document.getElementById("applyRangeBtn").addEventListener("click", function() {
+        const min = parseInt(document.getElementById("rangeMin").value) || 1;
+        const max = parseInt(document.getElementById("rangeMax").value) || 10;
+        generateRange(min, max);
+    });
+
+    // Custom List
+    document.getElementById("applyCustomBtn").addEventListener("click", function() {
+        const raw = document.getElementById("customListInput").value;
+        const parsed = raw.split(/[\n,]+/).map(s => s.trim()).filter(s => s.length > 0);
+        if (parsed.length < 2) {
+            alert("Please provide at least 2 items.");
+            return;
+        }
+        items = parsed;
+        drawWheel();
+    });
+
+    document.getElementById("presetYesNo").addEventListener("click", function() {
+        document.getElementById("customListInput").value = "YES\nNO";
+        document.getElementById("applyCustomBtn").click();
+    });
+    document.getElementById("presetLetters").addEventListener("click", function() {
+        document.getElementById("customListInput").value = "A\nB\nC\nD\nE";
+        document.getElementById("applyCustomBtn").click();
+    });
+    document.getElementById("presetColors").addEventListener("click", function() {
+        document.getElementById("customListInput").value = "Red\nBlue\nGreen\nYellow\nPurple\nOrange";
+        document.getElementById("applyCustomBtn").click();
+    });
+
+    // Initial Wheel Render
+    drawWheel();
+</script>
+
+</body>
+</html>
